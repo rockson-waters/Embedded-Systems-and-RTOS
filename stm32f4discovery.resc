@@ -1,0 +1,17 @@
+using sysbus
+$name?="STM32F4_Discovery"
+mach create $name
+machine LoadPlatformDescription @platforms/boards/stm32f4_discovery-kit.repl
+
+cpu PerformanceInMips 125
+
+$bin?=@/nuttx/blink.elf
+
+showAnalyzer sysbus.usart2
+
+macro reset
+"""
+  sysbus LoadELF $bin
+"""
+
+runMacro $reset

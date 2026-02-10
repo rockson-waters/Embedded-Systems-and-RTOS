@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # Interactive Renode with X11 display support (Linux)
+  renode-gui:
+    image: antmicro/renode:latest
+    container_name: renode-gui
+    stdin_open: true
+    tty: true
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - ${XAUTHORITY:-$HOME/.Xauthority}:/home/developer/.Xauthority
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./nuttx:/nuttx
+    network_mode: host
+
+  # pysimCoder - visual simulation tool
+  pysimcoder:
+    image: robertobucher/pysimcoder:latest
+    container_name: pysimcoder
+    stdin_open: true
+    tty: true
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=/tmp/.XAuthority
+    volumes:
+      - ${XAUTHORITY:-$HOME/.Xauthority}:/tmp/.XAuthority
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./nuttx:/nuttx
+    network_mode: host

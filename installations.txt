@@ -1,0 +1,12 @@
+We want to install the following:
+
+    + STM32CubeIDE: https://www.st.com/en/development-tools/stm32cubeide.html. I have the binary available if needed.
+    
+    + Docker and docker compose: https://docs.docker.com/engine/install/ubuntu/
+    
+
+    + We need to install nuttx: Install instructions can be found here: https://nuttx.apache.org/docs/latest/quickstart/install.html
+        
+    + We need minicom installed. We will work primarily with a baudrate of 115200. Users should have access to the dialout.
+    
+    + Vscode
