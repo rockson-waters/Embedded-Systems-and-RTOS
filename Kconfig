@@ -1,0 +1,27 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config EXAMPLES_TASK_LAB
+	tristate "Task Control Lab"
+	default n
+	---help---
+		A demonstration of NuttX task creation and control mechanisms
+		including suspend/resume, delay, preemption lock, and deletion.
+
+if EXAMPLES_TASK_LAB
+
+config EXAMPLES_TASK_LAB_PROGNAME
+	string "Program name"
+	default "tasklab"
+
+config EXAMPLES_TASK_LAB_PRIORITY
+	int "Task Lab priority"
+	default 100
+
+config EXAMPLES_TASK_LAB_STACKSIZE
+	int "Task Lab stack size"
+	default 2048
+
+endif # EXAMPLES_TASK_LAB

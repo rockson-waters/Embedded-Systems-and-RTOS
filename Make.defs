@@ -1,0 +1,3 @@
+ifneq ($(CONFIG_EXAMPLES_TASK_LAB),)
+CONFIGURED_APPS += $(APPDIR)/examples/task_lab
+endif
