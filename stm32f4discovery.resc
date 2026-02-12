@@ -5,7 +5,7 @@ machine LoadPlatformDescription @platforms/boards/stm32f4_discovery-kit.repl
 
 cpu PerformanceInMips 125
 
-$bin?=@/nuttx/blink.elf
+$bin?=@/nuttx/nuttx
 
 showAnalyzer sysbus.usart2
 
